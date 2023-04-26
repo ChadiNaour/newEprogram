@@ -86,7 +86,7 @@ const Features = () => {
                 <div className="data_wrapper">
                   <h3>Assistance dédiée et suivi fournisseurs</h3>
                   <p>
-                    On s'occupe de tout, vous ne vous ocuppez de rien! de l'assistance dédiée au quotidien à la gestion et le suivi des fournisseurs.
+                    On s'occupe de tout, vous ne vous ocuppez de rien! De l'assistance dédiée au quotidien à la gestion et le suivi des fournisseurs.
                   </p>
                 </div>
               </m.div>

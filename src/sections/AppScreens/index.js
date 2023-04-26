@@ -22,7 +22,7 @@ const AppScreens = () => {
             </SectionTitle>
             <div className="text-container">
               <div className="check-text"><div style={{width: "30px"}}><BiCheckCircle style={{marginRight: "10px"}} size="30"/></div>Le montant que vous voulez, aux collaborateurs que vous voulez.</div>
-              <div className="check-text"><div style={{width: "30px"}}><BiCheckCircle style={{marginRight: "10px"}} size="30"/></div>Un crédit a consommer par vos collaborateurs, librement et directement sur la plateforme.</div>
+              <div className="check-text"><div style={{width: "30px"}}><BiCheckCircle style={{marginRight: "10px"}} size="30"/></div>Un crédit à consommer par vos collaborateurs, librement et directement sur la plateforme.</div>
               <div className="check-text"><div style={{width: "30px"}}><BiCheckCircle style={{marginRight: "10px"}} size="30"/></div>Une multitude de conventions, aux meilleurs prix pour équiper vos collaborateurs.</div>
             </div>
           </Col>

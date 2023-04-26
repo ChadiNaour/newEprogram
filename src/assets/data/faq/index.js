@@ -1,7 +1,7 @@
 const data = {
   faqs: [
     {
-      title: 'Qui a accès à eprogram ?',
+      title: 'Qui peut accéder à eProgram ?',
       content: "Seuls les employés dont l'entreprise a signé un contrat de avantages et prestations avec nous peuvent accéder à eprogram."
     },
     {

@@ -14,7 +14,7 @@ import { m, useAnimation } from "framer-motion";
 
 var Options = [
   { value: "Ressources humaines", label: "Ressources humaines" },
-  { value: "Employee", label: "Employee" },
+  { value: "Employé", label: "Employé" },
 ];
 
 const customStyles = {
