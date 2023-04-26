@@ -35,13 +35,13 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors
   }
-  console.log("result",result, result.data.allContentfulBlog.edges.length);
+  // console.log("result",result, result.data.allContentfulBlog.edges.length);
 
   // Create a new page for each blog post
   const blogPostTemplate = require.resolve(`./src/templates/blog-page.js`);
   const length = result.data.allContentfulBlog.edges.length;
   result.data.allContentfulBlog.edges.forEach(node => {
-    console.log("node",node.node);
+    // console.log("node",node.node);
     createPage({
       path: `/blog/${node.node.slug}`,
       component: blogPostTemplate,

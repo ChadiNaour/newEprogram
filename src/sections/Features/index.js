@@ -58,7 +58,7 @@ const Features = () => {
           <h2>
             Gestion externalisée des conventions
           </h2>
-          <h3>Nous pronons en charge de vos convention de A à Z,de la négociation à la livraison des produits à vos collaborateurs.</h3>
+          <h3>Nous prenons en charge de vos convention de A à Z,de la négociation à la livraison des produits à vos collaborateurs.</h3>
         </div>
         <Row>
           <div
@@ -73,7 +73,7 @@ const Features = () => {
                     Des prix réduits<br /> pour tous
                   </h3>
                   <p>
-                    Que vous soyez un multinationale ou une PME, vous bénéficiez des mêmes pris conventionnés.
+                    Que vous soyez un multinationale ou une PME, vous bénéficiez des mêmes prix conventionnés.
                   </p>
                 </div>
               </m.div>
