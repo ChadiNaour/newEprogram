@@ -8,7 +8,7 @@ const ActualityWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
     flex-direction: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding-bottom: 40px;
   }
