@@ -172,13 +172,6 @@ const Modal = ({ open, setOpen }) => {
                         <Button className="button" onClick={() => { emailCheck() }}>
                             {!loading ? <span>Vérifier mon éligibilité</span> :
                             <span>Chargement...</span>
-                            // <Player
-                            //     autoplay
-                            //     loop
-                            //     src="https://assets6.lottiefiles.com/private_files/lf30_4muhuwvf.json"
-                            //     style={{ padding: "0px",height: "15px", width: "30px"}}
-                            // >
-                            // </Player>
                             }
                         </Button>
                     </div>

@@ -17,8 +17,6 @@ const ButtonStyle = styled.button`
     position: relative;
     color: ${props => props.theme.primaryLightColor};
     border: 1.5px solid ${props => props.theme.primaryLightColor};
-    stroke-width: 1px;
-    stroke-color: red;
     background-color: white;
     z-index: 2;
     &:hover {

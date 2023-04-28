@@ -12,7 +12,6 @@ import Icon6 from "assets/images/app/features/icon6.png";
 import FeturesSectionWrapper from "./fetures.style";
 import { m, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
-import Animations from "../../Animations/index"
 
 const Features = () => {
   const conventionsAnimation = useAnimation();
@@ -58,7 +57,7 @@ const Features = () => {
           <h2>
             Gestion externalisée des conventions
           </h2>
-          <h3>Nous prenons en charge de vos convention de A à Z,de la négociation à la livraison des produits à vos collaborateurs.</h3>
+          <h3>Nous pronons en charge de vos convention de A à Z,de la négociation à la livraison des produits à vos collaborateurs.</h3>
         </div>
         <Row>
           <div
@@ -73,7 +72,7 @@ const Features = () => {
                     Des prix réduits<br /> pour tous
                   </h3>
                   <p>
-                    Que vous soyez un multinationale ou une PME, vous bénéficiez des mêmes prix conventionnés.
+                    Que vous soyez un multinationale ou une PME, vous bénéficiez des mêmes pris conventionnés.
                   </p>
                 </div>
               </m.div>
@@ -86,7 +85,7 @@ const Features = () => {
                 <div className="data_wrapper">
                   <h3>Assistance dédiée et suivi fournisseurs</h3>
                   <p>
-                    On s'occupe de tout, vous ne vous ocuppez de rien! De l'assistance dédiée au quotidien à la gestion et le suivi des fournisseurs.
+                    On s'occupe de tout, vous ne vous ocuppez de rien! de l'assistance dédiée au quotidien à la gestion et le suivi des fournisseurs.
                   </p>
                 </div>
               </m.div>

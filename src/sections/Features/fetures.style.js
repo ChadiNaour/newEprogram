@@ -52,6 +52,7 @@ const FeturesSectionWrapper = styled.section`
    }
     .fetures-block{
         display: flex;
+        // -webkit-flex: 0 0 33.333333%;
         flex-direction: row;
         gap: 15px;
         .data_wrapper {

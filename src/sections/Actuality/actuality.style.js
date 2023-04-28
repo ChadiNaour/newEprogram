@@ -3,6 +3,11 @@ import styled from 'styled-components';
 const ActualityWrapper = styled.section`
   padding: 70px 0 100px 0;
   background-color: #f9f9f9;
+  .loading {
+    padding: 0px;
+    height: 120px;
+    width: 120px 
+  }
   .Blog-container {
     width: 100%;
     display: flex;
@@ -22,6 +27,11 @@ const ActualityWrapper = styled.section`
     .Blog-container {
       justify-content: center;
     }
+    .loading {
+      padding: 0px;
+      height: 120px;
+      width: 120px 
+    }
   }
   @media only screen and (max-width: 568px) {
     padding: 80px 0 30px 0;
@@ -34,6 +44,11 @@ const ActualityWrapper = styled.section`
       justify-content: center;
       align-items: center;
       padding-bottom: 40px;
+    }
+    .loading {
+      padding: 0px;
+      height: 80px;
+      width: 80px 
     }
   }
   

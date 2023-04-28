@@ -6,6 +6,8 @@ import BlogCard from "../../reusecore/BlogCard";
 import { createClient } from 'contentful';
 import { m, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
+import { Player } from '@lottiefiles/react-lottie-player';
+import { SlickSlider, SliderItem } from "reusecore/SlickSlider";
 
 const Actuality = () => {
     const [blogPosts, setBlogPosts] = useState([]);
@@ -30,6 +32,43 @@ const Actuality = () => {
             }
         }
     }
+
+    const settings = {
+        //autoplay: true,
+        infinite: true,
+        //dots: true,
+        //dotsClass: "button__bar",
+        //speed: 1500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        // prevArrow: <ArrowLeft />,
+        // nextArrow: <ArrowRight />,
+        responsive: [
+            {
+                breakpoint: 912,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                }
+            }
+        ]
+    };
 
     useEffect(() => {
         if (inView) {
@@ -65,19 +104,33 @@ const Actuality = () => {
                                 <div className="underline"></div>
                             </div>
                         </SectionTitle>
-                        {blogPosts.length ? <div ref={ref} className="Blog-container">
-                            {
-                                blogPosts.map((blogContent, index) => {
-                                    if (index >= 3)
-                                        return null;
-                                    return (
-                                        <m.div animate={blogsAnimation} initial="hidden" variants={getButtonVariants(index)}>
-                                            <BlogCard key={index} blogContent={blogContent} />
-                                        </m.div>
-                                    )
-                                })
-                            }
-                        </div> : <div style={{ paddingBlock: "100px", display: "flex", justifyContent: "center", alignItems: "center" }}><h1>Chargement...</h1></div>}
+                        {blogPosts.length ?
+                            <div ref={ref} className="Blog-container">
+                                {/* <SlickSlider {...settings} ref={ref} className="Blog-container"> */}
+                                    {
+                                        blogPosts.map((blogContent, index) => {
+                                            if (index >= 3)
+                                                return null;
+                                            return (
+                                                // <SliderItem key={index}>
+                                                    <m.div key={index} animate={blogsAnimation} initial="hidden" variants={getButtonVariants(index)}>
+                                                        <BlogCard key={index} blogContent={blogContent} />
+                                                    </m.div>
+                                                // </SliderItem>
+                                            )
+                                        })
+                                    }
+                                {/* </SlickSlider> */}
+                            </div> :
+                            <div style={{ paddingBlock: "100px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <Player
+                                    autoplay
+                                    loop
+                                    src="https://lottie.host/ff3883d6-13c1-4789-bec4-3edda705b83b/yjh56MTXlo.json"
+                                    className="loading"
+                                >
+                                </Player>
+                            </div>}
                     </Col>
                 </Row>
             </Container>

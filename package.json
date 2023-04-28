@@ -16,6 +16,7 @@
         "format": "prettier --write \"**/*.{js,jsx,json,md}\""
     },
     "dependencies": {
+        "@lottiefiles/react-lottie-player": "^3.5.3",
         "axios": "^1.2.1",
         "contentful": "^9.2.14",
         "dotenv": "^16.0.3",

@@ -26,7 +26,7 @@ const BlogCard = ({ blogContent }) => {
       </div>
       <div className={`text-container ${blogContent.fields?.color}`}>
         <h1>{limitText(blogContent.fields?.title, 55)}</h1>
-        <span>{formattedDate} by {blogContent.fields?.author}</span>
+        <span>{formattedDate} par {blogContent.fields?.author}</span>
         <p>{limitText(blogContent.fields?.description, 130)}</p>
         <div className="link" onClick={() => navigate(`/blog/${encodeURIComponent(blogContent.fields?.slug)}`)}>
           Lire plus

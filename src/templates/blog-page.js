@@ -26,6 +26,7 @@ import {
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import Modal from '../reusecore/Modal';
 import { m } from "framer-motion";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export default function BlogPost({ pageContext }) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function BlogPost({ pageContext }) {
 
     const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
         <button {...props} className="slick-arrow slick-prev-icon">
-            <IoIosArrowRoundBack /><span style={{height: "100%!important",pointerEvents: "none!important", cursor: "default"}} onClick={(event) => event.stopPropagation()}>{currentSlide + 1 + " / " + slideCount}</span>
+            <IoIosArrowRoundBack /><span style={{ height: "100%!important", pointerEvents: "none!important", cursor: "default" }} onClick={(event) => event.stopPropagation()}>{currentSlide + 1 + " / " + slideCount}</span>
         </button>
     );
     const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
@@ -66,29 +67,29 @@ export default function BlogPost({ pageContext }) {
         nextArrow: <ArrowRight />,
         responsive: [
             {
-              breakpoint: 912,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-              }
+                breakpoint: 912,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
             },
             {
-              breakpoint: 500,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: false,
-              }
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                }
             },
             {
-              breakpoint: 400,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: false,
-              }
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                }
             }
-          ]
+        ]
     };
 
     useEffect(() => {
@@ -115,15 +116,15 @@ export default function BlogPost({ pageContext }) {
             <GlobalStyle />
             <Layout>
                 <SEO title={`${pageContext?.title} | eProgram`} image={pageContext?.image} description={pageContext?.description} />
-                {modalOpen && <Modal open={modalOpen} setOpen={setModalOpen}/>}
+                {modalOpen && <Modal open={modalOpen} setOpen={setModalOpen} />}
                 <Navigation modalOpen={modalOpen} setModalOpen={setModalOpen} />
                 {post ? <Container>
                     <StyledHead>
-                        <m.div initial={{ y: 50,opacity: 0 }} animate={{ y:0,opacity: 1 }}
-                               transition={{ duration: 0.5 }} className={`head ${post?.color}`}>
+                        <m.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.5 }} className={`head ${post?.color}`}>
                             <img alt="post cover" src={`https://${post?.coverImage.fields.file.url}`} />
-                            <m.div initial={{ x: 50,opacity: 0 }} animate={{ x:0,opacity: 1 }}
-                               transition={{ duration: 0.5 }} className="color-badge"></m.div>
+                            <m.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 0.5 }} className="color-badge"></m.div>
                         </m.div>
                         <SectionTitle style={{ fontSize: "20px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
                             className="section-title"
@@ -148,7 +149,7 @@ export default function BlogPost({ pageContext }) {
                         <ContentMarkdown><ReactMarkdown children={post?.content} rehypePlugins={[rehypeRaw]} />
                         </ContentMarkdown>
                         <div style={{ marginTop: "40px" }}>
-                            <span style={{ fontWeight: "bold", fontSize: "18px" }}>{moment(post?.creationDate).locale("fr").format("DD MMMM YYYY")} by {post?.author}</span>
+                            <span style={{ fontWeight: "bold", fontSize: "18px" }}>{moment(post?.creationDate).locale("fr").format("DD MMMM YYYY")} par {post?.author}</span>
                         </div>
                     </StyledHead>
                     <ReadMoreWrapper>
@@ -161,12 +162,45 @@ export default function BlogPost({ pageContext }) {
                             ))}
                         </SlickSlider>
                     </ReadMoreWrapper>
-                </Container> : <Container><div style={{ paddingBlock: "50vh", display: "flex", justifyContent: "center", alignItems: "center" }}><h1>Chargement...</h1></div></Container>}
+                </Container> :
+                    <Container>
+                        <Loading style={{ paddingBlock: "40vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <Player
+                                autoplay
+                                loop
+                                src="https://lottie.host/ff3883d6-13c1-4789-bec4-3edda705b83b/yjh56MTXlo.json"
+                                className="loading"
+                            >
+                            </Player>
+                        </Loading>
+                    </Container>}
                 <Footer />
             </Layout>
         </ThemeProvider>
     )
 }
+
+const Loading = styled.div`
+.loading {
+    padding: 0px;
+    height: 180px;
+    width: 180px 
+  }
+  @media only screen and (max-width: 768px) {
+    .loading {
+        padding: 0px;
+        height: 120px;
+        width: 120px 
+      }
+  }
+  @media only screen and (max-width: 568px) {
+    .loading {
+        padding: 0px;
+        height: 80px;
+        width: 80px 
+      }
+  }
+`
 
 const ReadMoreWrapper = styled.div`
 padding: 50px 0 120px 0;
